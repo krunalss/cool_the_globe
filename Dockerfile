@@ -7,7 +7,8 @@ RUN apt-get update \
     && apt-get clean
 
 # Install Poetry
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN curl -sSL https://install.python-poetry.org | python3 - \
+    && ln -s /root/.local/bin/poetry /usr/local/bin/poetry
 
 # Set the working directory in the container
 WORKDIR /app
