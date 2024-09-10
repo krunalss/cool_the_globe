@@ -10,6 +10,7 @@ project_name = "app"
 list_of_files = [
     ".github/workflows/.gitkeep",
     f"{project_name}/__init__.py",
+    f"{project_name}/static/__init__.py",
     f"{project_name}/main.py",
     f"{project_name}/routes/__init__.py",
     f"{project_name}/routes/homepage.py",
