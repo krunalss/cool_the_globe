@@ -26,7 +26,7 @@ jobs:
     # Step 4: Push the Docker image directly to Render's registry (skip Docker Hub)
     - name: Deploy to Render
       run: |
-        curl -X POST -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+        curl -X POST -H "Authorization: Bearer ${{secrets.RENDER_API_KEY}}" \
         -H "Content-Type: application/json" \
-        -d '{"serviceId":"your-render-service-id","triggerName":"manual-deploy"}' \
+        -d '{"serviceId":"srv-crgcv0g8fa8c73aoggcg","triggerName":"manual-deploy"}' \
         https://api.render.com/v1/services/srv-crgcv0g8fa8c73aoggcg/deploys
