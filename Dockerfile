@@ -1,5 +1,5 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# Use an official Python 3.10 runtime as a parent image
+FROM python:3.10-slim
 
 # Install system dependencies required by Poetry and Python packages
 RUN apt-get update \
