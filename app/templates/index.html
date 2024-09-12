@@ -1,59 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mission: Cool the Earth</title>
-    <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; }
-        header { background-color: #2e7d32; color: white; padding: 15px 20px; text-align: center; }
-        main { max-width: 800px; margin: auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #2e7d32; }
-        p { font-size: 18px; line-height: 1.6; }
-        ul { padding-left: 20px; }
-        .highlight { font-weight: bold; color: #d32f2f; }
-        footer { text-align: center; margin-top: 20px; padding: 10px; background-color: #2e7d32; color: white; }
-    </style>
+    <title>Climate Awareness - Reduce Carbon Emission</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Mission: Cool the Earth</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Did You Know?</h2>
-            <p><strong>According to reports:</strong></p>
-            <ul>
-                <li>The past 12 months have been <span class="highlight">1.61°C higher</span> than pre-industrial temperatures.</li>
-                <li>Climate change can have impacts on the mental health of young people.</li>
-                <li>Did you hear about the heat wave alert in Kashmir this summer?</li>
-                <li><span class="highlight">54% of India</span> faces High to Extremely High Water Stress.</li>
-            </ul>
-        </section>
 
-        <section>
-            <h2>What is a Carbon Footprint?</h2>
-            <p>Carbon footprint refers to the total amount of carbon dioxide (CO2) and other greenhouse gases emitted directly or indirectly by an individual, organization, or activity. 
-            These emissions are major contributors to climate change, trapping heat in the Earth's atmosphere and leading to global warming. Reducing our carbon footprint is crucial for mitigating 
-            climate impacts and fostering a healthier environment.</p>
-        </section>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Climate Awareness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <!-- 
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    -->    
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://forms.gle/5ZjPCGfqA4vsrMrw7" target="_blank">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <section>
-            <h2>Purpose of the Project</h2>
-            <p>We are developing this project under the guidance of <strong>Mrs. Sapna Jhawer ma'am</strong>, as part of the <strong>Kalpana Accelerator 3.0 program</strong>. Our goal is to raise awareness about climate change and how individuals can 
-            reduce their carbon footprints.</p>
-            <p>By participating, you’re taking an important step toward a more sustainable future. Every action counts, and your insights will help us understand how we can collectively reduce our environmental impact. 
-            Your contribution today will help pave the way for a healthier planet for future generations.</p>
-        </section>
+    <!-- Hero Section -->
+    <section class="bg-success text-white text-center py-5">
+        <div class="container">
+            <h1>Let's Save the Planet</h1>
+            <p class="lead">Join us in reducing carbon emissions and cooling the earth</p>
+            <a href="https://forms.gle/5ZjPCGfqA4vsrMrw7" class="btn btn-light btn-lg" target="_blank">Get Involved</a>
+        </div>
+    </section>
 
-        <section>
-            <h2>Join Us in Making a Difference!</h2>
-            <p>We thank you for being part of our collective effort to create a more sustainable future.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Mission: Cool the Earth. All rights reserved.</p>
+    <!-- Awareness Cards Section -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Why It Matters</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Carbon Emission</h5>
+                            <p class="card-text">Carbon emissions are the primary driver of climate change, leading to extreme weather and rising sea levels.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Global Warming</h5>
+                            <p class="card-text">The Earth's average temperature has increased significantly over the past century, leading to harmful impacts on nature and humans.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Reducing Our Footprint</h5>
+                            <p class="card-text">We can all play a part by making sustainable choices, from energy consumption to reducing waste.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Global Climate Impact</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h3>1.5°C</h3>
+                    <p>Projected global temperature increase if current emissions continue.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>500,000</h3>
+                    <p>Species at risk of extinction due to climate change.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>9 million</h3>
+                    <p>People could be displaced by rising sea levels by 2050.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="text-white bg-dark py-5">
+        <div class="container text-center">
+            <h2>Reduce Your Carbon Footprint</h2>
+            <p>Every action counts! Learn how you can contribute to reducing carbon emissions and help lower the Earth’s temperature.</p>
+            <a href="https://forms.gle/5ZjPCGfqA4vsrMrw7" class="btn btn-primary btn-lg" target="_blank">Take Action Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p class="text-muted">© 2024 Climate Awareness Project. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS and Popper.js (Optional, but needed for features like dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
