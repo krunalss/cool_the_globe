@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.routes import homepage
-from app.routes import contact
+from app.routes import contact,insights
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
@@ -11,7 +11,10 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 # Include routes from the homepage module
 app.include_router(homepage.router)
 app.include_router(contact.router)
+app.include_router(insights.router)  # Include the insights router
 
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+    
+    

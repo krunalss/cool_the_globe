@@ -79,3 +79,33 @@ footer {
         margin-top: 10px;
     }
 }
+/* Insights Section Styling */
+.insights-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.insights-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.insights-table th, .insights-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.insights-table th {
+    background-color: #4CAF50; /* Adjust color to suit the theme */
+    color: white;
+}
+
+.insights-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.insights-table tr:hover {
+    background-color: #ddd;
+}
