@@ -109,3 +109,18 @@ footer {
 .insights-table tr:hover {
     background-color: #ddd;
 }
+/* Chart container */
+.chart-container {
+    width: 100%;
+    max-width: 600px; /* Ensures the chart doesn't get too wide on large screens */
+    margin: 0 auto; /* Center the chart */
+    padding: 15px;
+}
+
+/* Media queries for mobile view */
+@media (max-width: 767px) {
+    .chart-container {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Ensure it stretches fully in mobile view */
+    }
+}
