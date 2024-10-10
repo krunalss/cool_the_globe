@@ -23,6 +23,8 @@ async def insights(request: Request):
     # Clean the data by stripping any extra whitespace or newlines
     df.columns = df.columns.str.strip()
 
+
+    '''
     # First Bar Chart: Climate Change Effects Awareness
     counts = df['Have  you heared about the following incidents? (Select all that apply)'].value_counts()
     bar_chart = px.bar(
@@ -34,7 +36,11 @@ async def insights(request: Request):
         template='plotly'
     )
     # Create a JSON representation of the chart for rendering in the template
-    bar_chart_html = bar_chart.to_html(full_html=False)
+    # Disable the legend
+    bar_chart.update_layout(showlegend=False)
+    bar_chart_html = bar_chart.to_html(full_html=False) 
+    
+    '''
 
     # Second Pie Chart: Are you experiencing any effects of climate change in your area?
     pie_data = df['Are you experiencing any effects of Climate Change in your area?'].value_counts()
@@ -46,6 +52,7 @@ async def insights(request: Request):
         color_discrete_sequence=px.colors.qualitative.Bold
     )
     # Create a JSON representation of the chart for rendering in the template
+    pie_chart.update_layout(showlegend=False)
     pie_chart_html = pie_chart.to_html(full_html=False)
 
     # Third Pie Chart: Are you experiencing any effects of climate change in your area?
@@ -60,6 +67,7 @@ async def insights(request: Request):
 
 
     # Create a JSON representation of the chart for rendering in the template
+    pie_chart2.update_layout(showlegend=False)
     pie_chart_html2 = pie_chart2.to_html(full_html=False)
 
     # 4th Pie Chart: Are you experiencing any effects of climate change in your area?
@@ -74,12 +82,13 @@ async def insights(request: Request):
 
 
     # Create a JSON representation of the chart for rendering in the template
+    pie_chart3.update_layout(showlegend=False)
     pie_chart_html3 = pie_chart3.to_html(full_html=False)
 
     # Pass the chart HTML to the Jinja2 template
     return templates.TemplateResponse("insights.html", {
         "request": request,
-        "bar_chart": bar_chart_html,
+        # "bar_chart": bar_chart_html,
         "pie_chart": pie_chart_html,
         "pie_chart2": pie_chart_html2,
         "pie_chart3": pie_chart_html3

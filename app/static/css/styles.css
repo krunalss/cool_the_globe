@@ -11,6 +11,14 @@ header, footer {
     padding: 20px;
     text-align: center;
 }
+.centered-heading {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #007b5e;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .content {
     justify-content: center; /* Horizontally center the content */
@@ -123,4 +131,12 @@ footer {
         width: 100%; /* Full width on smaller screens */
         max-width: 100%; /* Ensure it stretches fully in mobile view */
     }
+}
+.centered-heading {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #007b5e;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

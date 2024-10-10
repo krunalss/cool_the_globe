@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Gauge Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <style>
+        .low-emission {
+            color: green;
+        }
+        .medium-emission {
+            color: orange;
+        }
+        .high-emission {
+            color: red;
+        }
+        .card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-content {
+            display: none;
+            transition: opacity 0.5s ease;
+        }
+        .card-content.show {
+            display: block;
+            opacity: 1;
+        }
+        @media (max-width: 767px) {
+            .card-deck {
+                display: block;
+            }
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Climate Cues</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/insights">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/greengauge">Green Gauge</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Result Section -->
+    <section class="py-5">
+        <div class="container">
+            <h1 class="text-center">Your Daily Carbon Footprint</h1>
+            <div class="alert alert-success text-center" role="alert">
+                <h2>{{ carbon_emission }} kg CO<sub>2</sub></h2>
+            </div>
+            <div class="text-center">
+                <a href="/greengauge" class="btn btn-primary">Calculate Again</a>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="mt-5 d-flex justify-content-center">
+                <div class="card m-3" id="how-to-calculate-card" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">How to Calculate</h5>
+                    </div>
+                </div>
+                <div class="card m-3" id="mitigation-steps-card" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Mitigation Steps</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculation Description -->
+            <div class="mt-5 card-content" id="how-to-calculate-content">
+                <h4 class="text-center">How Your Carbon Footprint Was Calculated</h4>
+                <div class="card-deck">
+                    {% for description in calculation_description %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text">{{ description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Mitigation Steps -->
+            <div class="mt-5 card-content" id="mitigation-steps-content">
+                <h4 class="text-center">Mitigation Steps</h4>
+                <div class="card-deck">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text">Reduce energy usage by turning off appliances when not in use and using energy-efficient devices.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text">Opt for public transportation, carpooling, or biking instead of driving alone.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text">Adopt a plant-based diet or reduce meat consumption to lower dietary emissions.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text">Minimize waste by recycling, composting, and reducing single-use items.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p class="text-muted">© 2024 Climate Cues Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('how-to-calculate-card').addEventListener('click', function() {
+            document.getElementById('how-to-calculate-content').classList.toggle('show');
+            document.getElementById('mitigation-steps-content').classList.remove('show');
+        });
+        document.getElementById('mitigation-steps-card').addEventListener('click', function() {
+            document.getElementById('mitigation-steps-content').classList.toggle('show');
+            document.getElementById('how-to-calculate-content').classList.remove('show');
+        });
+    </script>
+</body>
+</html>
