@@ -72,8 +72,16 @@
             <div class="alert alert-success text-center" role="alert">
                 <h2>{{ carbon_emission }} kg CO<sub>2</sub></h2>
             </div>
-            <div class="text-center">
+            <div class="text-center mt-2">
                 <a href="/greengauge" class="btn btn-primary">Calculate Again</a>
+            </div>
+
+            <!-- Emission Ranges -->
+            <div class="mt-4 text-center">
+                <h4>Carbon Footprint Ranges</h4>
+                <p class="low-emission">Low: {{ emission_ranges['low'] }}</p>
+                <p class="medium-emission">Medium: {{ emission_ranges['medium'] }}</p>
+                <p class="high-emission">High: {{ emission_ranges['high'] }}</p>
             </div>
 
             <!-- Info Cards -->
@@ -95,7 +103,7 @@
                 <h4 class="text-center">How Your Carbon Footprint Was Calculated</h4>
                 <div class="card-deck">
                     {% for description in calculation_description %}
-                    <div class="card mb-3">
+                    <div class="card mb-3" style="background-color: #e8f5e9;">
                         <div class="card-body">
                             <p class="card-text">{{ description }}</p>
                         </div>
@@ -108,22 +116,22 @@
             <div class="mt-5 card-content" id="mitigation-steps-content">
                 <h4 class="text-center">Mitigation Steps</h4>
                 <div class="card-deck">
-                    <div class="card mb-3">
+                    <div class="card mb-3" style="background-color: #f1f8e9;">
                         <div class="card-body">
                             <p class="card-text">Reduce energy usage by turning off appliances when not in use and using energy-efficient devices.</p>
                         </div>
                     </div>
-                    <div class="card mb-3">
+                    <div class="card mb-3" style="background-color: #e8f5e9;">
                         <div class="card-body">
                             <p class="card-text">Opt for public transportation, carpooling, or biking instead of driving alone.</p>
                         </div>
                     </div>
-                    <div class="card mb-3">
+                    <div class="card mb-3" style="background-color: #f1f8e9;">
                         <div class="card-body">
                             <p class="card-text">Adopt a plant-based diet or reduce meat consumption to lower dietary emissions.</p>
                         </div>
                     </div>
-                    <div class="card mb-3">
+                    <div class="card mb-3" style="background-color: #e8f5e9;">
                         <div class="card-body">
                             <p class="card-text">Minimize waste by recycling, composting, and reducing single-use items.</p>
                         </div>
@@ -147,10 +155,13 @@
         document.getElementById('how-to-calculate-card').addEventListener('click', function() {
             document.getElementById('how-to-calculate-content').classList.toggle('show');
             document.getElementById('mitigation-steps-content').classList.remove('show');
+            document.getElementById('how-to-calculate-content').scrollIntoView({ behavior: 'smooth' });
         });
+
         document.getElementById('mitigation-steps-card').addEventListener('click', function() {
             document.getElementById('mitigation-steps-content').classList.toggle('show');
             document.getElementById('how-to-calculate-content').classList.remove('show');
+            document.getElementById('mitigation-steps-content').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
