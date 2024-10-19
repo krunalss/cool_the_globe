@@ -29,6 +29,7 @@ header, footer {
 h1, h2 {
     font-weight: bold;
     margin-bottom: 20px;
+    font-family: 'Playfair Display', serif; 
 }
 
 p {
@@ -162,6 +163,7 @@ footer {
 
 .our-goal-section p {
     font-size: calc(1.2rem + 0.5vw);
+    text-shadow: 1px 1px 3px rgb(255, 255, 255);
 }
 /* Hero Section */
 .hero-section {
@@ -178,6 +180,7 @@ footer {
     margin-right: 2rem;
 } 
 .hero-section h1 {
+    color: #4b8b3b;
     font-size: 3rem;
     font-weight: bold;
 }
@@ -210,4 +213,84 @@ footer {
 .navbar-nav .nav-item .nav-link:hover {
     color: #006400;
     text-decoration: underline;
+}
+/* Awareness Survey Section */
+.awareness-section {
+    background-color: #d8bcb3; /* matching background color */
+    padding: 3rem 0;
+}
+
+.awareness-heading {
+   
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4b2c20; /* dark brown color to match the screenshot */
+    font-family: 'Arial Black', sans-serif; /* or use a similar heavy-weight font */
+}
+
+.awareness-text {
+    font-size: calc(1.2rem + 0.5vw);
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.awareness-btn {
+    background-color: #333; /* dark color for button */
+    color: #fff;
+    border-radius: 25px;
+    padding: 25px 20px;
+    font-size: calc(1.2rem + 0.5vw);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.awareness-btn:hover {
+    background-color: #1d8d15;
+    opacity: 0.9;
+}
+
+/* Carbon Footprint Section */
+.carbon-footprint-section {
+    background-color: #f8f9fa; /* Light background for visibility */
+    padding: 3rem 0;
+}
+
+.carbon-footprint-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #4b8b3b; /* Green color reflecting the environmental theme */
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+.carbon-footprint-text {
+    font-size: calc(1rem + 0.5vw);
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.carbon-footprint-section .fst-italic {
+    font-size: calc(1.2rem + 0.5vw);
+    font-style: italic;
+    color: #555; /* Slightly lighter color to differentiate the intro text */
+    font-family: 'Lora', serif;
+}
+
+.carbon-footprint-section img {
+    max-width: 200px;
+    margin-bottom: 1.5rem;
+}
+
+/* General Alignment */
+.text-left {
+    text-align: left;
+}
+
+/* General Section Styles for Layout Consistency */
+@media (max-width: 768px) {
+    .carbon-footprint-section .row {
+        text-align: center;
+    }
+    .carbon-footprint-section img {
+        margin-bottom: 2rem;
+    }
 }
