@@ -280,6 +280,30 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+/* Impacts of Climate Change Section */
+.impacts-section {
+    background-color: #d8bcb3;
+    padding: 3rem 0;
+}
+.impacts-section .impacts-heading {
+    font-size: 3rem;
+    color: #4b2c20;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-align: center;
+}
+.impacts-section img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain ;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.impacts-section-text {
+    font-size: calc(1rem + 0.5vw);
+    color: #333;
+    margin-bottom: 1.5rem; }
+
 /* General Alignment */
 .text-left {
     text-align: left;
