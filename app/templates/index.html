@@ -72,8 +72,8 @@
    <!-- Awareness Survey Section -->
    <section class="awareness-section py-5">
     <div class="container text-center">
-        <h2 class="awareness-heading">How Aware Are We?</h2>
-        <p class="awareness-text">Take the survey and see how your awareness compares to others!</p>
+        <h2 class="awareness-heading">How Aware Are you?</h2>
+        <p class="awareness-text">Let us know how aware you are about the impacts of climate change by taking part of this survey! </p>
         <a href="https://forms.gle/5ZjPCGfqA4vsrMrw7" class="awareness-btn" target="_blank">Tap here</a>
     </div>
 </section>
@@ -137,7 +137,41 @@
         </div>
     </section>
 
-    <!-- Call to Action Section (Green Gauge) -->
+    <!-- Take Action Now Section -->
+<section class="take-action-section">
+    <h2 class="take-action-heading">Take Actions Now!!</h2>
+    <p class="take-action-subheading">How Are We Acting Against Climate Change? <br> Join the Movement Today!</p>
+    <div class="take-action-icons">
+        <img src="../static/images/action_bike.png" alt="Climate Action - Bike" onclick="showBrowniePoints(this)">
+        <img src="../static/images/action_recycle.png" alt="Recycled More" onclick="showBrowniePoints(this)">
+        <img src="../static/images/action_conserve.png" alt="Conserved Water" onclick="showBrowniePoints(this)">
+        <img src="../static/images/action_tree.png" alt="Planted a Tree" onclick="showBrowniePoints(this)">
+        <img src="../static/images/action_reduce_energy.png" alt="Reduced Energy Usage" onclick="showBrowniePoints(this)">
+    </div>
+   <!--  <div id="brownie-point-text" class="brownie-point">You've earned a brownie point!</div>
+   <p>Tell us what else you do for a greener future...</p> -->
+</section>
+<!-- Brownie Points Progress Pop-up Modal -->
+<div id="progress-popup" class="brownie-popup">
+    <div class="brownie-popup-content">
+        <span class="close-button" onclick="closePopup()">&times;</span>
+        <p id="progress-popup-text">Step 1 of 5 completed!</p>
+    </div>
+</div>
+
+<!-- Congratulations Modal -->
+<div id="congratulations-popup" class="brownie-popup">
+    <div class="brownie-popup-content">
+        <span class="close-button" onclick="closeCongratulationsPopup()">&times;</span>
+        <p id="congratulations-popup-text">Congratulations! You've completed all the actions to help Cool the Globe!</p>
+    </div>
+</div>
+
+
+<!-- Link to Fireworks Script -->
+<script src="../static/js/fireworks.js"></script>
+
+<!-- Call to Action Section (Green Gauge) -->
     <section class="text-white bg-dark py-5">
         <div class="container text-center">
             <h2>Know Your Carbon Footprint</h2>

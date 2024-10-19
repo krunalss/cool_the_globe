@@ -301,8 +301,103 @@ footer {
 }
 .impacts-section-text {
     font-size: calc(1rem + 0.5vw);
-    color: #333;
+    color: #1d8d15;
     margin-bottom: 1.5rem; }
+
+/* Take Action Now Section */
+.take-action-section {
+    padding: 3rem 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+.take-action-heading {
+    font-size: 2.5rem;
+    color: #4b8b3b;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.take-action-subheading {
+    font-size: 1.2rem;
+    color: #333;
+    font-style: italic;
+    font-family: 'Lora', serif;
+    margin-bottom: 2rem;
+}
+.take-action-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.take-action-icons img {
+    max-width: 150px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.take-action-icons img:hover {
+    transform: scale(1.1);
+}
+/* Fireworks Container */
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+   
+    background-color: rgba(0, 0, 0, 0.1); /* Debugging purpose */
+}
+
+/* Brownie Points Pop-up Modal */
+/* Brownie Points Pop-up Modal */
+.brownie-popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    overflow: auto;
+}
+
+.brownie-popup-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Lora', serif;
+}
+
+.brownie-popup-content p {
+    font-size: 1.5rem;
+    color: #4b8b3b; /* Green to reflect environmental theme */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* General Alignment */
 .text-left {
@@ -317,4 +412,23 @@ footer {
     .carbon-footprint-section img {
         margin-bottom: 2rem;
     }
+    .take-action-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Accessibility Improvements */
+.btn:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
