@@ -131,6 +131,13 @@ footer {
     margin: 0 auto; /* Center the chart */
     padding: 15px;
 }
+/* Chart container */
+.bar-chart-container {
+    width: 100%;
+   /* max-width: 600px; /* Ensures the chart doesn't get too wide on large screens */
+    margin: 0 auto; /* Center the chart */
+    padding: 15px;
+}
 
 /* Media queries for mobile view */
 @media (max-width: 767px) {

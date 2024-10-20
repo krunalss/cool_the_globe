@@ -85,11 +85,59 @@ async def insights(request: Request):
     pie_chart3.update_layout(showlegend=False)
     pie_chart_html3 = pie_chart3.to_html(full_html=False)
 
+
+    # title Which of the following climate change effects are you aware of? Select the relevant column for climate change effects
+    climate_effects_column = 'Which of the following climate change effects are you aware of? (Select all that apply)'
+    df_clean = df.dropna(subset=[climate_effects_column])
+    df_clean[climate_effects_column] = df_clean[climate_effects_column].str.split(',')
+    df_exploded = df_clean.explode(climate_effects_column)
+    df_exploded[climate_effects_column] = df_exploded[climate_effects_column].str.strip()
+
+    # Count the number of occurrences of each option
+    option_counts = df_exploded[climate_effects_column].value_counts()
+
+    # Calculate percentages
+    total_responses = option_counts.sum()
+    option_percentages = (option_counts / total_responses) * 100
+
+    # Create a bar chart using Plotly
+    bar_chart = px.bar(
+        x=option_counts.values,
+        y=option_counts.index,
+        orientation='h',
+        labels={'x': 'Count', 'y': 'Climate Change Effects'},
+        template='plotly',
+        color_discrete_sequence=['#7B3FBC']  # Color: Purple
+    )
+
+    # Add text to show counts and percentages on the bars
+    bar_chart.update_traces(
+        text=[f'{count} ({percent:.1f}%)' for count, percent in zip(option_counts, option_percentages)],
+        textposition='auto'
+    )
+    
+    # Disable the legend
+    bar_chart.update_layout(showlegend=False)
+    
+    # Adjust chart layout to resemble the desired look
+    bar_chart.update_layout(
+        xaxis=dict(tickmode='linear'),
+        yaxis_title=None,
+        xaxis_title=None,
+        height=500,
+        margin=dict(l=200)  # Adjust left margin to fit longer labels
+    )
+    
+    # Render the chart as HTML
+    bar_chart_html = bar_chart.to_html(full_html=False,config={
+        'displayModeBar': False  # This disables the toolbar
+    })
+
     # Pass the chart HTML to the Jinja2 template
     return templates.TemplateResponse("insights.html", {
         "request": request,
-        # "bar_chart": bar_chart_html,
         "pie_chart": pie_chart_html,
         "pie_chart2": pie_chart_html2,
-        "pie_chart3": pie_chart_html3
+        "pie_chart3": pie_chart_html3,
+        "bar_chart": bar_chart_html
     })

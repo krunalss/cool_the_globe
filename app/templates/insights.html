@@ -75,11 +75,18 @@
         <h2 class="centered-heading">How much do you know about carbon offsets?</h2>
         <!-- Insert pie chart -->
         <div class="chart-container">{{ pie_chart2 | safe }}</div>
-        <div>
+    </div>
+    <div>
             <h2 class="centered-heading">Do you track or calculate your personal carbon footprint?</h2>
             <!-- Insert pie chart -->
             <div class="chart-container">{{ pie_chart3 | safe }}</div>
     </div>
+    <div>
+        <h2 class="centered-heading">Which of the following climate change effects are you aware of?</h2>
+        
+        <div class="bar-chart-container">{{ bar_chart | safe }}</div>
+    </div>
+    
 
 </section>
 
