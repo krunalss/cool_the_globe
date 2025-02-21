@@ -14,7 +14,8 @@ RUN curl -sSL https://install.python-poetry.org | python3 - \
 WORKDIR /app
 
 # Copy only pyproject.toml and poetry.lock first to leverage Docker caching
-COPY pyproject.toml poetry.lock /app/
+#COPY pyproject.toml poetry.lock /app/
+COPY pyproject.toml poetry.lock README.md /app/
 
 # Install dependencies with Poetry (without creating a virtual environment)
 RUN poetry config virtualenvs.create false \
